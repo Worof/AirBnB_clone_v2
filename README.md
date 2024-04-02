@@ -1,4 +1,71 @@
-<center> <h1>HBNB - The Console</h1> </center>
+# HBNB - The Console (Version 2)
+
+This repository contains the advanced stage of a student project to build a clone of the AirBnB website. This version extends the initial backend interface, or console, to manage program data with enhanced functionality. The console commands now allow the user to interact with a MySQL database, creating, updating, and destroying objects, and managing database storage. This version introduces Object-Relational Mapping (ORM) using SQLAlchemy, adding a layer of abstraction to interact with the database.
+
+## Repository Contents by Project Task
+
+| Tasks | Files | Description |
+| ----- | ----- | ----------- |
+| 0: Authors/README File | AUTHORS | Project authors |
+| 1: Pep8 | N/A | All code is pep8 compliant |
+| 2: Unit Testing | /tests | Unit tests for all class-defining modules |
+| 3-10: Various | /models/*, console.py | Expansion of model classes and console functionality to include database interaction using SQLAlchemy |
+| Additional: MySQL setup | /setup_mysql_dev.sql, /setup_mysql_test.sql | Scripts to prepare the MySQL database for development and testing environments |
+
+## General Use
+
+First, clone this repository to your local machine.
+
+\`\`\`bash
+git clone [repository link]
+\`\`\`
+
+Navigate to the repository directory and run \`console.py\`:
+
+\`\`\`bash
+cd AirBnB_clone_v2
+./console.py
+\`\`\`
+
+This command launches the HBNB console. From here, you can use various commands to interact with the system.
+
+## Commands
+
+The console supports the following commands, enhanced to interact with the MySQL database:
+
+- \`create\`: Creates an instance based on the given class.
+- \`destroy\`: Destroys an object based on class name and ID.
+- \`show\`: Shows an object based on class name and ID.
+- \`all\`: Shows all objects, or all objects of a given class.
+- \`update\`: Updates an object's attributes based on class name and ID.
+- \`quit\`: Exits the console (EOF also exits).
+
+## Advanced Syntax
+
+The console supports an alternative syntax for some commands:
+
+\`\`\`bash
+<class_name>.<command>([<id> [<attribute_name> <attribute_value>] | [<dictionary_representation>]])
+\`\`\`
+
+## Additional Features in Version 2
+
+- Integration with MySQL database using SQLAlchemy.
+- Enhanced storage engine to switch between file storage and database storage.
+- Extended model classes and console commands to interact with the database.
+- Scripts to set up and configure the MySQL database for development and testing environments.
+
+## Setup and Configuration
+
+Ensure MySQL is installed and running. Set the necessary environment variables (\`HBNB_MYSQL_USER\`, \`HBNB_MYSQL_PWD\`, \`HBNB_MYSQL_HOST\`, \`HBNB_MYSQL_DB\`, and \`HBNB_TYPE_STORAGE\`) to configure the connection to the MySQL database.
+
+## Contributing
+
+Contributions to this project are welcome. Please follow the standard fork, clone, edit, and pull request workflow.
+
+
+
+<center> <h2>HBNB - The Console</h1> </center>
 
 This repository contains the initial stage of a student project to build a clone of the AirBnB website. This stage implements a backend interface, or console, to manage program data. Console commands allow the user to create, update, and destroy objects, as well as manage file storage. Using a system of JSON serialization/deserialization, storage is persistent between sessions.
 
