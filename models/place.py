@@ -3,6 +3,12 @@
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String, Integer, Float, ForeignKey
 from sqlalchemy.orm import relationship
+from models.amenity import Amenity
+
+# Association table for many-to-many relationship between Place and Amenity
+place_amenity = Table('place_amenity', Base.metadata,
+                      Column('place_id', String(60), ForeignKey('places.id'), primary_key=True, nullable=False),
+                      Column('amenity_id', String(60), ForeignKey('amenities.id'), primary_key=True, nullable=False))
 
 class Place(BaseModel, Base):
     """ A place to stay """
@@ -28,3 +34,18 @@ class Place(BaseModel, Base):
             all_reviews = storage.all(Review)
             place_reviews = [review for review in all_reviews.values() if review.place_id == self.id]
             return place_reviews
+    if models.storage_t == 'db':
+        amenities = relationship("Amenity", secondary=place_amenity, backref="place_amenities", viewonly=False)
+    else:
+        @property
+        def amenities(self):
+            """Returns the list of Amenity instances based on the attribute amenity_ids"""
+            from models import storage
+            from models.amenity import Amenity
+            all_amenities = storage.all(Amenity)
+            return [amenity for amenity in all_amenities.values() if amenity.id in self.amenity_ids]
+        @amenities.setter
+        def amenities(self, obj):
+            """Appends an Amenity.id to the attribute amenity_ids"""
+            if type(obj) == Amenity:
+                self.amenity_ids.append(obj.id)
