@@ -56,4 +56,4 @@ class FileStorage:
             key = f"{type(obj).__name__}.{obj.id}"
             if key in FileStorage.__objects:
                 del FileStorage.__objects[key]
-                self.save()
+                self.save(i)
