@@ -1,3 +1,32 @@
+# AirBnB Clone - Deploy Static
+
+This project focuses on the deployment of static content using Nginx and automating this process with Fabric scripts. The goal is to deepen understanding of web server configuration, file distribution, and automation of deployment tasks.
+
+## Description
+
+This project is part of the larger AirBnB clone project. In this segment, we prepare web servers to deploy static content, create a Fabric script to generate a `.tgz` archive from the contents of the `web_static` folder, and write scripts to distribute this archive and deploy it on web servers.
+
+## Getting Started
+
+### Dependencies
+
+- Ubuntu 20.04 LTS
+- Python 3.4.0
+- Fabric 3 version 1.14.post1
+- Nginx installed on the web servers
+
+### Installing
+
+- Clone this repository: `git clone [repository-url]`
+- Ensure you have the required permissions to execute the scripts.
+
+### Executing program
+
+1. **Prepare your web servers:**
+
+   Execute the script to configure Nginx and prepare the directories for deployment.
+
+
 # HBNB - The Console (Version 2)
 
 This repository contains the advanced stage of a student project to build a clone of the AirBnB website. This version extends the initial backend interface, or console, to manage program data with enhanced functionality. The console commands now allow the user to interact with a MySQL database, creating, updating, and destroying objects, and managing database storage. This version introduces Object-Relational Mapping (ORM) using SQLAlchemy, adding a layer of abstraction to interact with the database.
