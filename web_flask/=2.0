@@ -1,0 +1,5 @@
+Collecting Werkzeug
+  Using cached werkzeug-3.0.2-py3-none-any.whl (226 kB)
+Requirement already satisfied: MarkupSafe>=2.1.1 in /usr/local/lib/python3.8/dist-packages (from Werkzeug) (2.1.5)
+Installing collected packages: Werkzeug
+Successfully installed Werkzeug-3.0.2
